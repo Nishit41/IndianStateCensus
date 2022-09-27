@@ -1,0 +1,36 @@
+insert into address_booktable(id,firstName, lastName, address, cijsrfty, state, zip, phone_number, email) values
+(30,"Nishit","Ranjan","talco ","jsfr","jharkhand","831004","1215221589","nisitranjan81@gmail.com"),
+(40,"Ranjan","Nishit","jadugora","jdfhfr","jugsalai","23356+","2564656688","ranjananishit403@gmail.com");
+delete from address_booktable  where id =20;
+select * from address_booktable; 
+SET SQL_SAFE_UPDATES = 0;
+update address_booktable set address="bankure" where firstName="Nishit";
+select * from address_booktable;
+insert into address_booktable(id,firstname,lastname,address,city,state,zip,phone_number,email)values(22,"prem","Nath","simla-colony","Simla","ArunachalPradesh","258946","2345654512","ranajangd4353@hgm");
+delete from address_booktable where firstName = "Ranjan";
+select * from address_booktable  where city = "jsfr" and state = "jharkhand";
+select count from address_booktable where city="jsfr";
+select count(lastName) from address_booktable where state ="kashmir";
+insert into address_booktable(id,firstname,lastname,address,city,state,zip,phone_number,email)
+values(18,"prem","Nath","kashmir street1","jammu","kashmir","12524","9234760849","jrhrg@gamil");
+select * from address_booktable;
+update address_booktable set firstName = "pankaj" where id = 22;
+alter table address_booktable add addressBook_name varchar(15);
+alter table address_booktable add booktype varchar(10);
+select * from address_booktable;
+SET SQL_SAFE_UPDATES = 0;
+update address_booktable set addressBook_name="AbhishekBook1", booktype="family" where firstName="Nishit"; 
+update address_booktable set addressBook_name="Friendbook", booktype="friends"  where firstName="pankaj";
+update address_booktable set addressBook_name="familybook", booktype="family"  where firstName="prem";
+select * from address_booktable;
+select count(*) from address_booktable where booktype="family";  
+create table family(id int auto_increment, firstName varchar(20), lastName varchar(20), address varchar(30), city varchar(15),state varchar(20), zip varchar(6), phone_number varchar(10), email varchar(30),addressBook_name varchar(15), booktype varchar(10),primary key(id),foreign key (id) references address_booktable (id));
+desc family;
+select*from family;
+insert into family select * from address_booktable where booktype="family";
+select * from family;
+select * from address_booktable;
+create table friends(id int auto_increment, firstName varchar(20), lastName varchar(20), address varchar(30), city varchar(15),state varchar(20), zip varchar(6), phone_number varchar(10), email varchar(30),addressBook_name varchar(15), booktype varchar(10),primary key(id),foreign key (id) references address_booktable (id));
+select * from friends;
+insert into friends select * from address_booktable where booktype = "friends";
+select * from friends;
