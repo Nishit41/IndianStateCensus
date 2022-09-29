@@ -8,7 +8,7 @@ import java.util.List;
 public class EmployeePayrollServiceTest {
     @Test
     void given3EmployeesWhenWrittenToFileShouldMatchEmployeeEntries() throws IOException {
-        EmployeeData employeeData1 = new EmployeeData (1,"Saurabh", 40000);
+        EmployeeData employeeData1 = new EmployeeData (1,"Nishit", 40000);
         EmployeeData  employeeData2 = new EmployeeData (2,"Sachin", 20000);
         EmployeeData  employeeData3 = new EmployeeData (3,"Vinay", 50000);
 

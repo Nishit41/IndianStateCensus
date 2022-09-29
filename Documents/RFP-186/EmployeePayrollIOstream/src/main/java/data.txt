@@ -1,0 +1,3 @@
+EmployeeData{id=1, name='Nishit', salary=40000}
+EmployeeData{id=2, name='Sachin', salary=20000}
+EmployeeData{id=3, name='Vinay', salary=50000}
